@@ -20,20 +20,6 @@
                ReferencedContainer = "container:CommandLineKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D06884D19674D7D00BBFAAC"
-               BuildableName = "CommandLineKitTests.xctest"
-               BlueprintName = "CommandLineKitTests"
-               ReferencedContainer = "container:CommandLineKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -43,16 +29,6 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D06884D19674D7D00BBFAAC"
-               BuildableName = "CommandLineKitTests.xctest"
-               BlueprintName = "CommandLineKitTests"
-               ReferencedContainer = "container:CommandLineKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

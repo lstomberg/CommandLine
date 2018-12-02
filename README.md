@@ -2,7 +2,7 @@
 
 A pure Swift library for creating command-line interfaces.
 
-*Note: CommandLineKit `master` requires Xcode 9 / Swift 4.0. If you're using older versions of Swift, please check out the [earlier releases](https://github.com/jatoben/CommandLine/releases).*
+*Note: CommandLineKit `master` requires Xcode 9 / Swift 4.0. If you're using older versions of Swift, please check out the [earlier releases](https://github.com/lstomberg/CommandLine/releases).*
 
 ## Usage
 
@@ -160,7 +160,7 @@ $ ./example3 -👍 --👻
 
 License
 -------
-Copyright © 2014 Ben Gollmer.
+Copyright © 2018 Lucas Stomberg.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
