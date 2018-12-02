@@ -315,7 +315,7 @@ public class CommandLine {
       let attachedArg: String? = splitFlag.count == 2 ? String(splitFlag[1]) : nil
 
       var flagMatched = false
-      for option in _options where option.flagMatch(flag) {
+      for option in _options where option.flagMatch(String(flag)) {
         let vals = self._getFlagValues(idx, attachedArg)
         guard option.setValue(vals) else {
           throw ParseError.invalidValueForOption(option, vals)
@@ -407,7 +407,7 @@ public class CommandLine {
     /* Nil coalescing operator (??) doesn't work on closures :( */
     let format = formatOutput != nil ? formatOutput! : defaultFormat
 
-    let name = _arguments[0]
+    let name = URL(fileURLWithPath: _arguments[0]).lastPathComponent
     print(format("Usage: \(name) [options]", .about), terminator: "", to: &to)
 
     for opt in _options {

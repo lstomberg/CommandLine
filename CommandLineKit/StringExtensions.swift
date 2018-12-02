@@ -15,24 +15,9 @@
  * limitations under the License.
  */
 
-/* Required for localeconv(3) */
-#if os(OSX)
-  import Darwin
-#elseif os(Linux)
-  import Glibc
-#endif
+import Foundation
 
 internal extension String {
-  /* Retrieves locale-specified decimal separator from the environment
-   * using localeconv(3).
-   */
-  private func _localDecimalPoint() -> Character {
-    guard let locale = localeconv(), let decimalPoint = locale.pointee.decimal_point else {
-      return "."
-    }
-
-    return Character(UnicodeScalar(UInt8(bitPattern: decimalPoint.pointee)))
-  }
 
   /**
    * Attempts to parse the string value into a Double.
@@ -40,10 +25,7 @@ internal extension String {
    * - returns: A Double if the string can be parsed, nil otherwise.
    */
   func toDouble() -> Double? {
-    let decimalPoint = String(self._localDecimalPoint())
-    guard decimalPoint == "." || self.range(of: ".") == nil else { return nil }
-    let localeSelf = self.replacingOccurrences(of: decimalPoint, with: ".")
-    return Double(localeSelf)
+    return Double(self)
   }
 
   /**
@@ -69,7 +51,7 @@ internal extension String {
     }
 
     if curIdx != self.endIndex {
-      s.append(String(self[curIdx...]))
+      s.append(String(self[curIdx..<self.endIndex]))
     }
 
     return s
